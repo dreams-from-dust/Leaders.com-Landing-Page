@@ -1,170 +1,266 @@
+/* Base styles for the entire page */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    display: flex; /* Use flexbox for main layout */
+    flex-direction: column; /* Stack content vertically */
+    min-height: 100vh; /* Ensure body takes full viewport height */
+}
 
-        /* Base styles for the entire page */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            display: flex; /* Use flexbox for main layout */
-            flex-direction: column; /* Stack content vertically */
-            min-height: 100vh; /* Ensure body takes full viewport height */
-        }
+/* Header styles */
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    position: sticky; /* Make header sticky */
+    top: 0;
+    z-index: 50; /* Ensure header stays on top */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add subtle shadow */
+}
 
-        /* Header styles */
-        header {
-            background-color: #333;
-            color: white;
-            padding: 10px 0;
-            position: sticky; /* Make header sticky */
-            top: 0;
-            z-index: 50; /* Ensure header stays on top */
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add subtle shadow */
-        }
+/* Navigation container */
+nav {
+    display: flex;
+    flex-direction: column; /* Stack logo and items on small screens */
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px; /* Max width for content */
+    margin: 0 auto; /* Center the navigation */
+    padding: 0 15px; /* Add horizontal padding */
+}
 
-        /* Navigation container */
-        nav {
-            display: flex;
-            flex-direction: column; /* Stack logo and items on small screens */
-            align-items: center;
-            justify-content: space-between;
-            max-width: 1200px; /* Max width for content */
-            margin: 0 auto; /* Center the navigation */
-            padding: 0 15px; /* Add horizontal padding */
-        }
+/* Logo styles */
+.logo {
+    font-weight: bold;
+    font-size: 30px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-bottom: 15px; /* Space below logo on small screens */
+    text-align: center;
+    max-width: 250px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-        /* Logo styles */
-        .logo {
-            font-weight: bold; /* Kept for general styling, but SVG text style takes precedence */
-            font-size: 30px;   /* Kept for general styling, but SVG text style takes precedence */
-            cursor: pointer;
-            transition: 0.3s ease;
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; /* Kept for general styling, but SVG text style takes precedence */
-            margin-bottom: 15px; /* Space below logo on small screens */
-            text-align: center;
-            /* Ensure the logo container has a defined size for the SVG to scale within */
-            max-width: 250px; /* Allow logo to shrink on smaller screens */
-            width: 100%; /* Make it fluid */
-            height: auto; /* Maintain aspect ratio */
-            display: flex; /* Use flex to center the SVG within its container */
-            justify-content: center;
-            align-items: center;
-        }
+/* Style for the SVG inside the logo div */
+.logo svg {
+    width: 100%;
+    height: 100%;
+}
 
-        /* Style for the SVG inside the logo div */
-        .logo svg {
-            width: 100%;
-            height: 100%;
-        }
+/* Navigation items container */
+.items {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to next line */
+    justify-content: center;
+    gap: 15px; /* Space between navigation items */
+    width: 100%; /* Ensure items take full width on mobile */
+}
 
-        /* Navigation items container */
-        .items {
-            display: flex;
-            flex-wrap: wrap; /* Allow items to wrap to next line */
-            justify-content: center;
-            gap: 15px; /* Space between navigation items */
-        }
+/* Individual navigation box styles */
+.box {
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    border-radius: 8px; /* Rounded corners */
+    text-align: center; /* Center text within the box */
+    flex-grow: 1; /* Allow boxes to grow and fill available space */
+    min-width: 120px; /* Prevent boxes from getting too small */
+    font-size: 1em; /* Default font size for nav items */
+}
 
-        /* Individual navigation box styles */
-        .box {
-            padding: 10px 20px;
-            cursor: pointer;
-            transition: 0.3s ease;
-            border-radius: 8px; /* Rounded corners */
-        }
+.box:hover {
+    background-color: #555;
+}
 
-        .box:hover {
-            background-color: #555;
-        }
+/* Main content area */
+main {
+    flex-grow: 1; /* Allow main content to take available space */
+    text-align: center;
+    padding: 20px;
+    max-width: 1200px; /* Max width for content */
+    margin: 0 auto; /* Center the main content */
+}
 
-        /* Main content area */
-        main {
-            flex-grow: 1; /* Allow main content to take available space */
-            text-align: center;
-            padding: 20px;
-            max-width: 1200px; /* Max width for content */
-            margin: 0 auto; /* Center the main content */
-        }
+/* Main heading */
+h1 {
+    color: #333;
+    font-size: 2.5em; /* Original font size, no changes in media queries */
+    margin-bottom: 30px;
+}
 
-        /* Main heading */
-        h1 {
-            color: #333;
-            font-size: 2.5em; /* Original font size, no changes in media queries */
-            margin-bottom: 30px;
-        }
+/* Grid container for images */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column on small screens */
+    gap: 25px; /* Space between grid items */
+    background-color: #f5f7fa;
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Add shadow */
+}
 
-        /* Grid container for images */
-        .grid {
-            display: grid;
-            grid-template-columns: 1fr; /* Single column on small screens */
-            gap: 25px; /* Space between grid items */
-            background-color: #f5f7fa;
-            border-radius: 15px;
-            padding: 30px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Add shadow */
-        }
+/* Individual square (image container) */
+.square {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Maintain aspect ratio */
+    border-radius: 15px;
+    overflow: hidden; /* Hide overflowing content */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Add shadow to squares */
+}
 
-        /* Individual square (image container) */
-        .square {
-            width: 100%;
-            aspect-ratio: 1 / 1; /* Maintain aspect ratio */
-            border-radius: 15px;
-            overflow: hidden; /* Hide overflowing content */
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Add shadow to squares */
-        }
+.square img {
+    width: 100%;
+    height: 100%; /* Make image fill the square */
+    object-fit: cover; /* Cover the area without distortion */
+    border-radius: 15px;
+    display: block;
+}
 
-        .square img {
-            width: 100%;
-            height: 100%; /* Make image fill the square */
-            object-fit: cover; /* Cover the area without distortion */
-            border-radius: 15px;
-            display: block;
-        }
+/* Content section styles */
+.content {
+    background-color: #ffffff;
+    border-radius: 15px;
+    margin: 0 20px; /* Horizontal margin for smaller screens */
+    padding: 25px;
+    border: 5px solid #555;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Add shadow */
+}
 
-        /* Content section styles */
-        .content {
-            background-color: #ffffff;
-            border-radius: 15px;
-            margin: 0 20px; /* Horizontal margin for smaller screens */
-            padding: 25px;
-            border: 5px solid #555;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Add shadow */
-        }
+.content p {
+    line-height: 1.6; /* Improved line height for readability */
+    font-size: 18px; /* Original font size, no changes in media queries */
+    text-align: justify;
+    color: #555;
+    word-spacing: normal; /* Ensure normal word spacing by default */
+}
 
-        .content p {
-            line-height: 1.6; /* Improved line height for readability */
-            font-size: 18px; /* Original font size, no changes in media queries */
-            text-align: justify;
-            color: #555;
-        }
+/* Footer styles */
+footer {
+    text-align: center;
+    padding: 15px 0;
+    background-color: #333;
+    color: white;
+    margin-top: auto; /* Push footer to the bottom */
+}
 
-        /* Footer styles */
-        footer {
-            text-align: center;
-            padding: 15px 0;
-            background-color: #333;
-            color: white;
-            margin-top: auto; /* Push footer to the bottom */
-        }
+/* --- Media Queries for Responsiveness --- */
 
-        /* --- Media Queries for Responsiveness --- */
+/* Small screens (e.g., typical mobile phones) */
+@media screen and (max-width: 767px) {
+    /* Adjustments for navigation bar height on mobile */
+    header {
+        padding: 5px 0; /* Reduce vertical padding to make header less tall */
+    }
 
-        /* Medium screens (tablets and larger phones) */
-        @media screen and (min-width: 768px) {
-            nav {
-                flex-direction: row; /* Align logo and items horizontally */
-            }
+    nav {
+        padding: 0 10px; /* Reduce horizontal padding */
+    }
 
-            .logo {
-                margin-bottom: 0; /* Remove bottom margin */
-                position: static; /* Remove fixed positioning */
-            }
+    .logo {
+        margin-bottom: 10px; /* Slightly reduce space below logo */
+        font-size: 24px; /* Smaller font size for logo text */
+    }
+    .logo svg text { /* Target the text inside the SVG directly */
+        font-size: 24px; /* Match the logo font size */
+    }
 
-            .grid {
-                grid-template-columns: 1fr 1fr; /* Two columns for images */
-            }
 
-            .content {
-                margin: 0; /* Remove horizontal margin for wider screens */
-            }
-        }
+    .items {
+        gap: 8px; /* Reduce space between nav items */
+        padding: 0 5px; /* Add slight padding to nav items container */
+    }
+
+    .box {
+        padding: 8px 12px; /* Reduce padding for nav items */
+        font-size: 0.9em; /* Smaller font size for navigation links */
+        min-width: unset; /* Allow boxes to shrink more if needed */
+        flex-basis: calc(33.33% - 16px); /* Roughly 3 items per row on small screens */
+        /* This works well with a small gap, ensuring items fit and wrap neatly */
+    }
+    /* Adjust flex-basis for specific cases like 6 items, if you want exactly 2 rows of 3 */
+    .items.six-items .box { /* Example: if you had a class 'six-items' */
+        flex-basis: calc(50% - 16px); /* 2 items per row */
+    }
+
+
+    /* Adjustments for content box height and text on mobile */
+    .content {
+        margin: 0 15px; /* Slightly less horizontal margin */
+        padding: 18px; /* Reduce padding inside the content box */
+        border-width: 3px; /* Slightly thinner border */
+    }
+
+    .content p {
+        font-size: 15px; /* Smaller font size for paragraph text */
+        line-height: 1.5; /* Adjust line height for new font size */
+        word-spacing: -0.05em; /* Slightly reduce word spacing to avoid excessive gaps */
+    }
+
+    .grid {
+        padding: 20px; /* Reduce padding around the image grid */
+        gap: 15px; /* Reduce space between grid items */
+    }
+}
+
+
+/* Medium screens (tablets and larger phones) */
+@media screen and (min-width: 768px) {
+    nav {
+        flex-direction: row; /* Align logo and items horizontally */
+    }
+
+    .logo {
+        margin-bottom: 0; /* Remove bottom margin */
+        position: static; /* Remove fixed positioning */
+    }
+    .logo svg text { /* Reset font size for desktop */
+        font-size: 30px;
+    }
+
+
+    .items {
+        width: auto; /* Reset width for larger screens */
+        gap: 15px; /* Restore original gap */
+    }
+
+    .box {
+        flex-grow: 0; /* Prevent boxes from growing on larger screens */
+        min-width: auto; /* Reset min-width */
+        padding: 10px 20px; /* Restore original padding */
+        font-size: 1em; /* Restore default font size */
+        flex-basis: auto; /* Reset flex-basis */
+    }
+
+    .grid {
+        grid-template-columns: 1fr 1fr; /* Two columns for images */
+        padding: 30px; /* Restore original padding */
+        gap: 25px; /* Restore original gap */
+    }
+
+    .content {
+        margin: 0; /* Remove horizontal margin for wider screens */
+        padding: 25px; /* Restore original padding */
+        border-width: 5px; /* Restore original border thickness */
+    }
+
+    .content p {
+        font-size: 18px; /* Restore original font size */
+        line-height: 1.6; /* Restore original line height */
+        word-spacing: normal; /* Restore normal word spacing */
+    }
+}
+
+/* Ensure the SVG text within the logo scales correctly */
+.logo svg text {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 30px; /* Default for larger screens */
+    font-weight: bold;
+}
