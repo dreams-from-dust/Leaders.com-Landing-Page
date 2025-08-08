@@ -15,6 +15,10 @@ A fully responsive landing page for a fictional company, "Leaders.com," which is
 -   HTML5
 -   CSS3
 
+### Live Demo
+
+You can view a live demonstration of this project here: [https://dreams-from-dust.github.io/Leaders.com-Landing-Page/](https://dreams-from-dust.github.io/Leaders.com-Landing-Page/)
+
 ### Getting Started
 
 To view this project, simply clone this repository to your local machine and open the `index.html` file in your web browser.
